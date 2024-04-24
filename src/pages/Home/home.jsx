@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const Home = () => {
   const [onlisting, onlistingtodos] = useState([]);
   const navigate = useNavigate();
+
   const gettodos = async () => {
     const response = await customAxios.get('/user/listing');
     onlistingtodos(response.data);
@@ -15,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     gettodos();
   }, []);
-  console.log(onlisting);
+  // console.log(onlisting);
 
   const onviewdetails = async id => {
     navigate(`/user/viewdetails/${id}`);

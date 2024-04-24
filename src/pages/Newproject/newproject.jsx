@@ -12,31 +12,29 @@ const Newproject = () => {
   const [input, addinput] = useState({});
   const [values, setValues] = useState([]);
   const [updatebutton, updating] = useState({});
-
   const [news, newone] = useState({});
-
   const [a, b] = useState({});
   const navigate = useNavigate();
 
   const onprojectname = e => {
     b(e.target.value);
-    // addinput({ title: e.target.value });
   };
-  console.log(a);
+  // console.log(a);
 
   const ontodo = e => {
     addinput({ ...input, todo: e.target.value, checked: false });
   };
 
-  console.log(input);
+  // console.log(input);
 
   const ongoingClick = () => {
     setValues([...values, input]);
     addinput({ todo: '' });
   };
-  console.log(values);
+  // console.log(values);
 
-  const deleting = i => {
+  const trash = i => {
+    console.log(i);
     const updatedValue = [...values];
     const [removedValue] = updatedValue.splice(i, 1);
     setValues(updatedValue);
@@ -49,7 +47,6 @@ const Newproject = () => {
     const num = 'done';
     updating(num);
   };
-  // console.log(updatebutton);
 
   const onupdateClick = () => {
     setValues([...values, input]);
@@ -59,12 +56,12 @@ const Newproject = () => {
   const ondone = () => {
     newone({ title: a, items: [...values] });
   };
-  console.log(news);
+  // console.log(news);
 
-  const no = async () => {
+  const ok = async () => {
     try {
       await customAxios.post('/user/todo', news);
-      console.log('settttttt');
+      // console.log('sett');
       navigate('/user/home');
     } catch (error) {
       console.log(error);
@@ -73,14 +70,12 @@ const Newproject = () => {
 
   return (
     <div className="newproject">
-      {/* <ToastContainer /> */}
       <div className="navbar1">
         <Logo></Logo>
       </div>
-
       <div className="todos">
         <div className="heading">
-          <h1>todolist</h1>
+          <h1>Todo List</h1>
         </div>
         <div className="addtodos">
           <Input
@@ -107,30 +102,37 @@ const Newproject = () => {
             </div>
           </div>
 
-          <div className="maping">
-            {values.map((item, i) => {
-              return (
-                <Card
-                  item={item}
-                  completed="true"
-                  deleting={() => {
-                    deleting(i);
-                  }}
-                  update={() => {
-                    update(i);
-                  }}
-                ></Card>
-              );
-            })}
+          <div className="mainmapping">
+            <div className="maping">
+              {values.map((item, i) => {
+                return (
+                  <Card
+                    item={item}
+                    completed="true"
+                    trash={() => {
+                      trash(i);
+                    }}
+                    update={() => {
+                      update(i);
+                    }}
+                  ></Card>
+                );
+              })}
+            </div>
+
+            <div className="mappingbtn">
+              {values.length ? (
+                <Button className="donebtn" onClick={ondone}>
+                  DONE
+                </Button>
+              ) : (
+                ''
+              )}
+            </div>
           </div>
-          {values.length ? (
-            <Button className="donebtn" onClick={ondone}>
-              DONE
-            </Button>
-          ) : (
-            ''
-          )}
-          <Button onClick={no}>okkkkk</Button>
+          <Button onClick={ok} className="finish">
+            FINISH
+          </Button>
         </div>
       </div>
     </div>

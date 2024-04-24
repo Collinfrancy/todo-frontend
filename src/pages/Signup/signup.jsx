@@ -44,34 +44,14 @@ const Signup = () => {
     }
   };
 
-  // const onUpload = async e => {
-  //   if (signUp.image) {
-  //     const name = signUp.image.split('4444/')[1];
-  //     await customAxios.post('/upload/delete', { image: name });
-  //   }
-  //   const file = e.target.files[0];
-  //   if (file) {
-  //     const formData = new FormData();
-  //     formData.append('file', file);
-  //     try {
-  //       const response = await customAxios.post('/upload/image', formData);
-  //       setSignUp({ ...signUp, image: response.data.url });
-  //     } catch (e) {
-  //       console.log(e);
-  //     }
-  //   }
-  // };
-
   const onUpload = e => {
     if (e.file && e.file.response) {
       setSignUp({ ...signUp, image: e.file.response.url });
     }
   };
-
   return (
     <div className="main2">
       <ToastContainer />
-
       <div className="navbar1">
         <div className="left1">
           <Logo></Logo>
@@ -98,12 +78,6 @@ const Signup = () => {
             type="Password"
             onChange={e => onChange(e, 'confirmPassword')}
           />
-
-          {/* <Input
-            type="file"
-            placeholder="Image"   
-            onChange={onUpload}
-          /> */}
           <div className="image56">
             <Upload
               name="file"

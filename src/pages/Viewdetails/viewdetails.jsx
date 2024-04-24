@@ -19,7 +19,7 @@ const Viewdetails = () => {
   useEffect(() => {
     viewfulldetails();
   }, []);
-  console.log(details);
+  //   console.log(details);
 
   const oncheckbox = id => {
     console.log(id);
@@ -47,7 +47,7 @@ const Viewdetails = () => {
 
                 return item.checked == false ? (
                   <Checkbox
-                    onClick={id => {
+                    onClick={() => {
                       oncheckbox(item._id);
                     }}
                   >
