@@ -1,0 +1,17 @@
+.Card {
+  background-color: white;
+  padding: 10px 10px;
+  height: 60px;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 8px 10px 0px rgb(223, 195, 195);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 30px;
+}
+
+.font {
+  display: flex;
+  gap: 19px;
+}

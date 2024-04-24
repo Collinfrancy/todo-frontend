@@ -1,0 +1,48 @@
+.viewdetails1 {
+  width: 700px;
+  height: 500px;
+  margin: 0px auto;
+  margin-top: 50px;
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: 15px 10px 10px 0px rgb(54, 30, 30);
+}
+.head {
+  width: 700px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.checking {
+  display: flex;
+  flex-direction: row;
+}
+.left {
+  width: 350px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  border-right: 1px solid black;
+}
+.todohead {
+  padding-bottom: 50px;
+  padding-top: 20px;
+}
+.right {
+  width: 350px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.underline {
+  text-decoration: underline;
+}
+.viewdetailsbut {
+  margin-left: 600px;
+}

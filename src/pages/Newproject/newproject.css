@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+/* .newproject {
+  height: 100vh;
+  width: 100vw;
+} */
+
+.todos {
+  width: 500px;
+  height: 500px;
+  color: blue;
+  margin: 0px auto;
+  margin-top: 50px;
+  border-radius: 10px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 0 15px 0px grey;
+  background-color: white;
+  box-shadow: 15px 10px 10px 0px rgb(54, 30, 30);
+}
+
+.heading {
+  height: 40px;
+  padding-left: 200px;
+}
+.addtodos {
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.addtodos1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-top: 20px;
+
+  width: 450px;
+  gap: 10px;
+}
+
+.new2 {
+  width: 230px;
+  height: 50px;
+  border-radius: 5px;
+}
+.new1 {
+  width: 300px;
+}
+.but {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 5px;
+
+  width: 150px;
+}
+
+.maping {
+  width: 390px;
+  height: 400px;
+
+  padding: 20px 30px;
+  margin-left: 70px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.donebtn {
+  width: 80px;
+  height: 100px;
+  margin-left: 380px;
+  background-color: rgb(166, 139, 139);
+  color: black;
+}
